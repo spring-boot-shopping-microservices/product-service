@@ -31,4 +31,23 @@ public class ProductService {
 
     log.info("product {} is created", product.getId());
   }
+
+  public List<ProductResponse> getAllProducts() {
+    List<Product> products = productRepository.findAll();
+
+    log.info("fetching products {}", products);
+
+    return products.stream()
+            .map(this::mapToProductResponse)
+            .toList();
+  }
+
+  private ProductResponse mapToProductResponse(Product product) {
+    return ProductResponse.builder()
+            .id(product.getId())
+            .name(product.getName())
+            .description(product.getDescription())
+            .price(product.getPrice())
+            .build();
+  }
 }
