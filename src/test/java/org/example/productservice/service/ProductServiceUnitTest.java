@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
-class ProductServiceTest {
+class ProductServiceUnitTest {
   @Mock
   private ProductRepository productRepository;
 
