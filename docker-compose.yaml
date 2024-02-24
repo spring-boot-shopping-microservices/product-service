@@ -2,7 +2,7 @@ version: "3.8"
 services:
   mongodb:
     image: mongo
-    container_name: mongo
+    container_name: product-service
     ports:
       - "27017:27017"
     volumes:
